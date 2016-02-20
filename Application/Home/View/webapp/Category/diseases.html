@@ -1,0 +1,5 @@
+<p>
+	<volist name="category" id="cate">
+		<a href="{:U('Article/'.$cate['template_index'].'?category='.$cate['name'])}" class="entity">{$cate.title}<if condition="$cate.icon neq 0"><img src="{$cate.icon|get_cover='path'}" alt="{$cate.title}"></if></a>
+	</volist>
+</p>

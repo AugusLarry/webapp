@@ -1,0 +1,61 @@
+<!--优惠活动文章详情页-->
+<extend name="Base/common"/>
+<block name="navbar">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<if condition="$category.name neq 'clinic'">
+				<div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>返回</span></a></div>
+			</if>
+			<div class="center sliding">{$info.title}</div>
+			<div class="right">
+				<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+			</div>
+			<div class="subnavbar">
+				{$info.description}
+				<a href="" class="button button-fill color-red">立即预约</a>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="page">
+	<div class="pages navbar-through toolbar-through">
+		<div data-page="detail" class="page">
+			<div class="page-content hide-bars-on-scroll">
+				<div class="content-block-title">
+					&nbsp;
+				</div>
+				<div class="content-block">
+					<div class="buttons-row">
+						<a href="#tab1" class="tab-link active button">详细信息</a>
+						<a href="#tab2" class="tab-link button">评论列表</a>
+					</div>
+				</div>
+				<div class="tabs-animated-wrap">
+					<div class="tabs">
+						<div id="tab1" class="tab active">
+							<style>
+								.item-title {
+									width: 84%;
+								}
+								.item-after {
+									width: 16%;
+								}
+								.purpose .item-title {
+									width: auto;
+									white-space: inherit;
+									text-overflow: inherit;
+									font-size: 14px;
+								}
+							</style>
+							<img src="{$info.cover_id|get_cover='path'}" style="max-width: 100%;"/>
+							{$info.content}
+						</div>
+						<div id="tab2" class="tab">
+							<iframe src="{:U('Home/Index/comment')}" width="100%" id="iframepage" frameborder="0" scrolling="no" marginheight="0" marginwidth="20"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>

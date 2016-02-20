@@ -1,0 +1,17 @@
+<div class="list-block media-list list-block-search searchbar-found">
+	<ul>
+		<volist name="list" id="data">
+			<li>
+				<a href="{:U('Article/detail?id='.$data['id'])}" class="item-link item-content">
+					<div class="item-inner">
+						<div class="item-title-row">
+							<div class="item-title">{$data.title}</div>
+							<div class="item-after">{$data.create_time|date='m-d',###}</div>
+						</div>
+						<div class="item-text">{$data.description}</div>
+					</div>
+				</a>
+			</li>
+		</volist>
+	</ul>
+</div>

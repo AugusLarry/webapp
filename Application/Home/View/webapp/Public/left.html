@@ -1,0 +1,33 @@
+<style>
+	.thisnav ul {
+		background-color: #2d2d2d;
+	}
+	.thisnav ul li div a {
+		color: #ababab;
+	}
+	.logo {
+		display: block;
+		margin: 35px 0;
+	}
+	.logo img {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+</style>
+<a class="logo external panel-close" href="/">
+	<img src="__IMG__/logo.png" alt="">
+</a>
+<div class="list-block thisnav">
+	<ul>
+		<think:nav name="nav">
+			<eq name="nav.pid" value="0">
+				<li class="item-content">
+					<div class="item-inner">
+						<div class="item-title"><a href="{$nav.url|get_nav_url}" class="panel-close external" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a></div>
+					</div>
+				</li>
+			</eq>
+		</think:nav>
+	</ul>
+</div>

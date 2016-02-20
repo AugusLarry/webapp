@@ -1,0 +1,24 @@
+<!--全屏化导航-->
+<div class="statusbar-overlay"></div>
+<!--面板覆盖-->
+<div class="panel-overlay"></div>
+<!--左侧导航面板-->
+<div class="panel panel-left panel-reveal">
+	<include file="Public/left"/>
+</div>
+<div class="views">
+	<div class="view view-main">
+		<!--顶部导航-->
+		<block name="navbar"></block>
+		<!--主体-->
+		<block name="page"></block>
+		<!--底部导航-->
+		<block name="toolbar">
+			<div class="toolbar tabbar tabbar-labels">
+				<div class="toolbar-inner">
+					{:W('Category/toolbar')}
+				</div>
+			</div>
+		</block>
+	</div>
+</div>

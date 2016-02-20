@@ -1,0 +1,7 @@
+<volist name="category" id="cate">
+	<eq name="key" value="0">
+		<a href="#tab{$cate.id}" class="tab-link active button">{$cate.title}</a>
+	<else/>
+		<a href="#tab{$cate.id}" class="tab-link button">{$cate.title}</a>
+	</eq>
+</volist>

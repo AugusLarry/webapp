@@ -1,0 +1,59 @@
+<if condition="!empty($list)">
+	<switch name="type">
+		<case value="activity">
+			<volist name="list" id="data">
+				<div class="card demo-card-header-pic">
+					<div style="background-image:url({$data.cover_id|get_cover='path'})" valign="bottom" class="card-header color-white no-border">{$data.title}</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p class="color-gray">
+								<span>活动开始时间:{$data.create_time|date='Y-m-d',###}</span><br/>
+								<span>活动结束时间:{$data.deadline|date='Y-m-d',###}</span>
+							</p>
+							<p>{$data.description}</p>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="#">阅读（{$data.view}）</a>
+						<a href="{:U('Article/detail?id='.$data['id'])}" class="link">查看详情</a>
+					</div>
+				</div>
+			</volist>
+		</case>
+		<case value="defaultlist">
+			<volist name="list" id="data">
+				<li>
+					<a href="{:U('Article/detail?id='.$data['id'])}" class="item-link item-content">
+						<div class="item-inner">
+							<div class="item-title-row">
+								<div class="item-title">{$data.title}</div>
+								<div class="item-after">{$data.create_time|date='m-d',###}</div>
+							</div>
+							<div class="item-text">{$data.description}</div>
+						</div>
+					</a>
+				</li>
+			</volist>
+		</case>
+		<case value="clinic">
+			<volist name="list" id="data">
+				<div class="card demo-card-header-pic">
+					<div style="background-image:url({$data.cover_id|get_cover='path'})" valign="bottom" class="card-header color-white no-border">{$data.title}</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p>时间：<b class="color-red">{$data.create_time|date="Y-m-d", ###}</b></p>
+							<p>地点：<span class="color-gray">{$data.id|get_field="address", "Gallery"}</span></p>
+							<p class="color-gray"><span class="color-black">合作单位：</span>{$data.description}</p>
+						</div>
+					</div>
+					<div class="card-footer">
+						<a href="javascript:void(0);">受众人数（{$data.id|get_field="population", "Gallery"}）</a>
+						<a href="{:U('Article/detail?id='.$data['id'])}" class="link">查看详情</a>
+					</div>
+				</div>
+			</volist>
+		</case>
+	</switch>
+<else />
+	<p style="text-align: center;margin:0;padding:1em 0;">已经加载完毕了!</p>
+</if>

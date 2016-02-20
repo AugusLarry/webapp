@@ -1,0 +1,10 @@
+<a href="/" class="tab-link external <if condition='CONTROLLER_NAME EQ "Index"'>active</if>">
+	<i class="icon"><img src="/Uploads/Picture/2015-12-08/index.png" <if condition='CONTROLLER_NAME EQ "Index"'>class="bg-blue"</if> alt="首页" width="24"/></i>
+	<span class="tabbar-label">首页</span>
+</a>
+<volist name="category" id="cate" offset="0" length='4'>
+	<a href="{:U('Article/'.$cate['template_index'].'?category='.$cate['name'])}" class="tab-link external <if condition='$Think.get.category eq $cate["name"]'>active</if>">
+		<i class="icon"><img src="{$cate.icon|get_cover='path'}" alt="{$cate.title}" <if condition='$Think.get.category eq $cate["name"]'>class="bg-blue"</if> width="24"/></i>
+		<span class="tabbar-label">{$cate.title}</span>
+	</a>
+</volist>

@@ -1,0 +1,41 @@
+<!--慈善义诊栏目页-->
+<extend name="Base/common"/>
+<block name="seo">
+	<title>{$category.meta_title}</title>
+	<meta name="keywords" content="{$category.keywords}" />
+	<meta name="description" content="{$category.description}" />
+</block>
+<block name="navbar">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="center sliding">{$category.title}</div>
+			<div class="right">
+				<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="page">
+	<div class="pages navbar-through toolbar-through">
+		<div data-page="clinic" class="page">
+			<style>
+				.infinite-scroll-preloader {
+					margin-bottom: 10px;
+					text-align: center;
+				}
+				.infinite-scroll-preloader .preloader {
+					width:34px;
+					height:34px;
+				}
+			</style>
+			<div class="page-content hide-bars-on-scroll infinite-scroll" data-distance="50">
+				<!--调用慈善义诊列表-->
+				{:W('Category/clinic')}
+				<!-- 加载提示符 -->
+				<div class="infinite-scroll-preloader is-hide">
+					<div class="preloader"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>

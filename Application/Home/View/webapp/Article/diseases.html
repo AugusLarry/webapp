@@ -1,0 +1,30 @@
+<!--疾病查询频道模型-->
+<extend name="Base/common"/>
+<block name="seo">
+	<title>{$category.meta_title}</title>
+	<meta name="keywords" content="{$category.keywords}" />
+	<meta name="description" content="{$category.description}" />
+</block>
+<block name="navbar">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<if condition="$category.name neq 'clinic'">
+				<div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>返回</span></a></div>
+			</if>
+			<div class="center sliding">{$category.title}</div>
+			<div class="right">
+				<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="page">
+	<div class="pages navbar-through toolbar-through">
+		<div data-page="index" class="page">
+			<div class="page-content hide-bars-on-scroll">
+				<!--调用疾病查询小病种分类-->
+				{:W('Category/diseases')}
+			</div>
+		</div>
+	</div>
+</block>

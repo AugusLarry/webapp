@@ -1,0 +1,29 @@
+[ 2016-02-20T08:29:01+08:00 ] 192.168.15.172 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009783s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002248s ]
+SQL: SHOW COLUMNS FROM `webapp_config` [ RunTime:0.0682s ]
+SQL: SELECT `type`,`name`,`value` FROM `webapp_config` WHERE `status` = 1  [ RunTime:0.0234s ]
+SQL: SHOW COLUMNS FROM `webapp_category` [ RunTime:0.0141s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `webapp_category` WHERE `status` = 1 ORDER BY sort  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `webapp_document` [ RunTime:0.0119s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `webapp_document` WHERE `status` = 1 AND `pid` = 0 AND `create_time` < 1455928140 AND ( deadline = 0 OR deadline > 1455928140 ) ORDER BY `id` DESC  [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000377s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `webapp_channel` [ RunTime:0.0416s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `webapp_channel` WHERE ( status=1 ) ORDER BY sort  [ RunTime:0.0012s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.224640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.225170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014960s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004804s ]
+

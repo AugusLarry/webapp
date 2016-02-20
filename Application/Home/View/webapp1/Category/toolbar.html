@@ -1,0 +1,13 @@
+<volist name="category" id="cate">
+	<eq name="current" value="$cate['id']">
+		<a href="{:U('Article/lists?category='.$cate['name'])}" class="tab-link active">
+			<i class="icon"><img src="{$cate.icon|get_cover='path'}" alt="{$cate.title}" class="bg-blue" width="24"/></i>
+			<span class="tabbar-label">{$cate.title}</span>
+		</a>
+	<else/>
+		<a href="{:U('Article/lists?category='.$cate['name'])}" class="tab-link">
+			<i class="icon"><img src="{$cate.icon|get_cover='path'}" alt="{$cate.title}" width="24"/></i>
+			<span class="tabbar-label">{$cate.title}</span>
+		</a>
+	</eq>
+</volist>

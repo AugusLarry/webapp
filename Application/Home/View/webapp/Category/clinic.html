@@ -1,0 +1,28 @@
+<style>
+	.demo-card-header-pic .card-header {
+		height: 128px;
+		background-size: cover;
+		background-position: center;
+	}
+	.card-content-inner p {
+		margin: .3em 0;
+	}
+</style>
+<div class="card-box">
+	<volist name="list" id="data">
+		<div class="card demo-card-header-pic">
+			<div style="background-image:url({$data.cover_id|get_cover='path'})" valign="bottom" class="card-header color-white no-border">{$data.title}</div>
+			<div class="card-content">
+				<div class="card-content-inner">
+					<p>时间：<b class="color-red">{$data.create_time|date="Y-m-d", ###}</b></p>
+					<p>地点：<span class="color-gray">{$data.id|get_field="address", "Gallery"}</span></p>
+					<p class="color-gray"><span class="color-black">合作单位：</span>{$data.description}</p>
+				</div>
+			</div>
+			<div class="card-footer">
+				<a href="javascript:void(0);">受众人数（{$data.id|get_field="population", "Gallery"}）</a>
+				<a href="{:U('Article/detail?id='.$data['id'])}" class="link">查看详情</a>
+			</div>
+		</div>
+	</volist>
+</div>

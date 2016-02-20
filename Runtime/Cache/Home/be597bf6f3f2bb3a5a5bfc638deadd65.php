@@ -1,0 +1,3 @@
+<?php if (!defined('THINK_PATH')) exit();?><p>
+	<?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cate): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Article/'.$cate['template_index'].'?category='.$cate['name']);?>" class="entity"><?php echo ($cate["title"]); if($cate["icon"] != 0): ?><img src="<?php echo (get_cover($cate["icon"],'path')); ?>" alt="<?php echo ($cate["title"]); ?>"><?php endif; ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+</p>

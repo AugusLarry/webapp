@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<include file="Public/head"/>
+</head>
+<!--IOS APP基本布局-->
+<body>
+	<!--全屏化导航-->
+	<div class="statusbar-overlay"></div>
+	<!--视图-->
+	<div class="views">
+		<div class="view view-main">
+			<!--顶部导航-->
+			<include file="Public/navbar"/>
+			<!--主体-->
+			<div class="pages navbar-through toolbar-through">
+				<div data-page="index" class="page">
+					<!--内容-->
+					<include file="Public/page"/>
+				</div>
+			</div>
+			<!--底部导航-->
+			<include file="Public/toolbar"/>
+		</div>
+	</div>
+	<!--底部JS及统计代码等隐藏内容-->
+    <include file="Public/footer"/>
+</body>
+</html>

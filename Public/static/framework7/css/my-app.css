@@ -1,0 +1,45 @@
+.entity {
+	display: inline-block;
+	padding: 8px 16px;
+	background: #393943;
+	color: #fff;
+	margin: 0 10px 10px 5px;
+	position: relative;
+	border-radius: 8px;
+}
+.entity img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.statusbar-overlay {
+	background: pink;
+	-webkit-transition: 400ms;
+	transition: 400ms;
+}
+body.with-panel-left-cover .statusbar-overlay {
+	background: #222;
+}
+.tabs-animated-wrap {
+	height: auto;
+}
+.navbar.bg-black {
+	color: #fff;
+}
+.navbar.bg-black a {
+	color: #fff;
+}
+.navbar.bg-black:after {
+	background-color: #000;
+}
+.panel {
+	background-color: #2d2d2d;
+	width:180px;
+}
+body.with-panel-left-reveal .panel-overlay {
+	margin-left: 180px;
+}
+body.with-panel-left-reveal .views {
+	-webkit-transform: translate3d(180px,0,0);
+	transform: translate3d(180px,0,0);
+}

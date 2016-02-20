@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<block name="seo">
+	<title>{:C('WEB_SITE_TITLE')}</title>
+	<meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}" />
+	<meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}" />
+</block>
+<link rel="stylesheet" href="__STATIC__/framework7/css/framework7.ios.min.css">
+<link rel="stylesheet" href="__STATIC__/framework7/css/framework7.ios.colors.min.css">
+<link rel="stylesheet" href="__STATIC__/framework7/css/my-app.css">
+<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
+{:hook('pageHeader')}
